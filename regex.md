@@ -30,20 +30,26 @@ The anchors used in an email address validation regex are the ^ and $ as seen in
 The ^ character 2nd to the start signifies that the regex will match with the section with code in the first set of parantheses that the character is before.  Meaning that information for each section is required in order to validate the email.  This does not apply to extensions though as they are not required.
 
 ### Quantifiers
-The used quantifier in email regex is the {2,6} in the extension section.
+The used quantifier in email regex is the {2,6} in the extension section.  The allowed amount of characters is from 2 to 6 characters so .co, .uk, or .ca will work, but something like .c will not work.
 
 ### Grouping Constructs
+Parentheses are used to group the sections of a regex as seen in the code below.  Grouping is used to seperate meta characters from the literal characters.  Grouping can be used to isolate a part of the string to a back reference or to replace part of a string.
+/^([a-zA-Z0-9_.-]+)@([\da-zA-Z.-]+).([a-zA-Z.]{2,6})$/
 
 ### Bracket Expressions
-
+Bracket expressions are used to define the which characters will be matched within a regex.  An example from the regex being used in this email regex is below.
+([a-zA-Z.]{2,6})$/
 ### Character Classes
-
+The used character class in this regex is the \d in the section below.
+@([\da-zA-Z.-]+)
+The \d character class matches with a single character.
 ### The OR Operator
-
+| acts as a boolean OR.  It will match the expression ebfore or after the | and can be used within a group or for an entire expression.
 ### Flags
-
+Flags are used in a regex for advanced searching.  In this example we are using a multi-line flag that is being shown by the use of ^ and $ before the encasing / in the regex.  They are used to encase the expression across mutiple lines of code without breaking.
 ### Character Escapes
-
+In a regex you will see a backslash that precedes a literal character.  Examples are \w or \s.
 ## Author
+I am a student attending a UPENN Full Stack Web Devleopment Coding Boot Camp. I am on GitHub.
+https://github.com/wyattwillner55
 
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
