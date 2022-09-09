@@ -25,9 +25,12 @@ Regex components for are /^([a-zA-Z0-9_.-]+)@([\da-zA-Z.-]+).([a-zA-Z.]{2,})$/. 
 3. ([a-zA-Z.]{2,}) is the extension section for confirming that the email address extension is valid.  Usually a .com, .mail. or .net  A typical email address is able to end with 2 characters as such as .co email addresses.  Sometimes for international email addresses there will be an extension such as .uk or .ca.
 
 ### Anchors
-
+The anchors used in an email address validation regex are the ^ and $ as seen in the beginning and end of the code shown.
+- /^([a-zA-Z0-9_.-]+)@([\da-zA-Z.-]+).([a-zA-Z.]{2,6})$/
+The ^ character 2nd to the start signifies that the regex will match with the section with code in the first set of parantheses that the character is before.  Meaning that information for each section is required in order to validate the email.  This does not apply to extensions though as they are not required.
 
 ### Quantifiers
+The used quantifier in email regex is the {2,6} in the extension section.
 
 ### Grouping Constructs
 
